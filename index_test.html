@@ -249,7 +249,7 @@
                   <div class="tab-pane fade" id="korea_semi_log_chart" role="tabpanel" style="height:35rem;">
                     <canvas id="myAreaChart_six"></canvas>
                   </div>
-                  <p style="margin-left: 2rem;">현재(<span id="치명률_날짜"></span>) 치명률(사망자/확진자 비율) | 국내: <span id="치명률"></span>%, 세계: <span id="세계치명률"></span>%</p>
+                  <p style="margin-left: 2rem;">현재(<span id="치명률_날짜"></span>) 치명률 | 국내: <span id="치명률"></span>%, 세계: <span id="세계치명률"></span>% (치명률: 사망자/확진자 비율)</p>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@
               <div class="card shadow mb-4 height-2">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-danger">국내 현황(클릭시 각 시도별 현황/확진자 이동경로로 이동)</h6>
+                  <h6 class="m-0 font-weight-bold text-danger">국내 확진자 누적 현황</h6>
                   <div class="right"><a class="new_window" href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" alt="상세보기"><i class="fas fa-external-link-alt"></i></a></div>
                 </div>
                 <!-- Card Body -->
@@ -556,9 +556,8 @@
           <div class="row">
             <div class="col-xl-12 col-lg-12">
               <div class="row">
-
                 <!-- 제주 약국 현황 -->
-                <div class="col-xl-8 col-lg-12">
+                <div class="col-xl-12 col-lg-12">
                   <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -567,41 +566,16 @@
                     </div>
 
                     <div class="card-body">
-                      <a class="btn btn-primary" target="_blank" style="margin-bottom:1rem;margin-top:1rem; width:100%;" href="https://whereismask.com" role="button">주변 약국 위치 및 재고 현황</a>
                       <div id="jejuMedicineMap" style="width:100%;height:35rem;"></div>
                       <ul class="mt10">
-                        <li>우체국, 약국 전화해보시고 방문하시는 것이 좋습니다.</li>
+                        <li>우체국은 1인 5매 제한(전화해보시고 가시는 것이 좋습니다.)</li>
+                        <li>타 정보는 업데이트 중에 있습니다.</li>
                         <li>마스크 <a href="https://coronamask.kr">온라인 구매</a> 바로가기</li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <!-- //제주 약국 현황 -->
-
-                <!-- 제주 약국 현황 -->
-                <div class="col-xl-4 col-lg-12">
-                  <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                      <h6 class="m-0 font-weight-bold text-danger">마스크 5부제</h6>
-                      <div class="right"><a class="new_window" href="http://www.moef.go.kr/com/synap/synapView.do?atchFileId=ATCH_000000000013363&fileSn=2" target="_blank" alt="상세보기"><i class="fas fa-external-link-alt"></i></a></div>
-                    </div>
-
-                    <div class="card-body">
-                      <ul class="mt10">
-                        <li>출생연도 끝자리 기준</li>
-                        <li>월 : 1, 6</li>
-                        <li>화 : 2, 7</li>
-                        <li>수 : 3, 8</li>
-                        <li>목 : 4, 9</li>
-                        <li>금 : 5, 0</li>
-                        <li>주말은 평일에 구입하지 못한 사람들에 한해 출생연도 여부 상관없이 구매가 가능</li>
-                        <li>마스크 구매시에는 운전면허증, 주민등록증, 여권 등의 신분증을 지참</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- //제주 약국 현황 -->
+                <!-- //제주 최신 정보(최근 중국인 이동 경로) -->
 
               </div>
             </div>
@@ -628,7 +602,7 @@
 
                         <a class="btn btn-primary" target="_blank" style="margin-bottom:1rem; width:100%;" href="https://gis.jeju.go.kr/crn/index.do" role="button">제주도청제공 확진자 이동동선 및 안심존</a>
 
-                        <p>위 링크에서 지도로 확진자 이동경로를 도청에서 직접 제공하고 있으므로, <span style="color:red; font-weight:bold;">아래 내용은 더이상 업데이트 하지 않습니다.</span></p>
+                        <p>위 링크에서 도청에서 정보를 직접 제공하고 있으므로, <span style="color:red; font-weight:bold;">아래 내용은 더이상 업데이트 하지 않습니다.</span></p>
 
                         <!-- 확진자 News 4 -->
                         <div class="card">
@@ -1602,6 +1576,13 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+  <!-- 배너광고 -->
+  <div id="floatMenu">
+    <a href="https://together.kakao.com/tags/%EC%BD%94%EB%A1%9C%EB%82%9819">
+      <img src="./img/img_kakao_last.png" width="100%"  alt="카카오 코로나 모두함께 이겨내요">
+    </a>
+  </div>
+
   <script src="totalDataSet.js"></script>
   <script>
     var data = marker;
@@ -1788,6 +1769,31 @@
 
     // 배너를 숨기고 싶으면 아래 코드를 주석처리하세요
     //showBanner();
+  </script>
+
+  <script>
+    $(document).ready(function() {
+
+    	// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+    	var floatPosition = parseInt($("#floatMenu").css('top'));
+    	// 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+
+    	$(window).scroll(function() {
+    		// 현재 스크롤 위치를 가져온다.
+    		var scrollTop = $(window).scrollTop();
+    		var newPosition = scrollTop + floatPosition + "px";
+
+    		/* 애니메이션 없이 바로 따라감
+    		 $("#floatMenu").css('top', newPosition);
+    		 */
+
+    		$("#floatMenu").stop().animate({
+    			"top" : newPosition
+    		}, 500);
+
+    	}).scroll();
+
+    });
   </script>
 </body>
 
