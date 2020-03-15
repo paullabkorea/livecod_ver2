@@ -56,12 +56,33 @@ for(let i in 지역이름) {
     // console.log(i);
     // console.log(지역좌표[i][0], 지역좌표[i][1]);
     // console.log(지역이름[i], 지역별확진자[i]);
+    let 크롤러_지역별확진자 = 0;
+    let 크롤러_지역별격리해제 = 0;
+    let 크롤러_지역별사망자 = 0;
+    let 크롤러_십만명당발생율 = 0;
+    let 크롤러_지역별확진자비율 = 0;
+
+    for (var c = 0; c < koreaRegionalData.length; c++) {
+      if(지역이름[i] == koreaRegionalData[c]['지역이름']){
+        크롤러_지역별확진자 = koreaRegionalData[c]['확진자수'];
+        크롤러_지역별사망자 = koreaRegionalData[c]['사망자수'];
+        크롤러_지역별격리해제 = koreaRegionalData[c]['격리해제수'];
+        크롤러_십만명당발생율 = koreaRegionalData[c]['십만명당발생율'];
+        크롤러_지역별확진자비율 = koreaRegionalData[c]['지역별확진자비율'];
+      }
+    }
+    // console.log('크롤러')
+    // console.log(지역이름[i], 크롤러_지역별확진자, 크롤러_지역별사망자);
 
     var point = new naver.maps.LatLng(지역좌표[i][0], 지역좌표[i][1]);
     var contentString = [
         '<div class="iw_inner">',
         '<p style="font-size: small; margin:10px;">지역이름 : ',지역이름[i],'<br>',
-        '확진자수 : ', 지역별확진자[i], '<br>',
+        '확진자수 : ', 크롤러_지역별확진자, '<br>',
+        '완치자수 : ', 크롤러_지역별격리해제, '<br>',
+        '사망자수 : ', 크롤러_지역별사망자, '<br>',
+        '인구 10만 명당 발생율 : ', 크롤러_십만명당발생율, '명 <br>',
+        '지역별 확진자 비율 : ', 크롤러_지역별확진자비율, '% <br>',
         지역이름[i], '현황, 확진자 동선 : <a href="', 지역별현황판[i], '" target="_blank">',
         지역이름[i], '바로가기<br>',
         '</p>',
@@ -74,7 +95,7 @@ for(let i in 지역이름) {
     var circle = new naver.maps.Circle({
         map: koreamap,
         center: point,
-        radius: 지역별확진자[i]*15,
+        radius: 크롤러_지역별확진자*15,
         strokeWeight: 3,
         fillColor: "#ff0000",
         fillOpacity: 0.7
